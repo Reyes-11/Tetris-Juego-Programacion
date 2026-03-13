@@ -1,0 +1,30 @@
+= *Proyecto: Ping Pong*
+image::img-banner.jpg[]
+
+== *Autores*
+* Allan González 
+* Andrés Reyes 
+* Fernando Reyes
+* Mitchael Ruíz
+
+== *Problema*
+El usuario requiere un juego de Tetris interactivo para un jugador real que permita competir en una serie de niveles, utilizando una interfaz gráfica y siguiendo el paradigma de Programación Orientada a Objetos.
+
+== *Requerimientos*
+
+=== *Requerimientos Funcionales*
+* Pantalla de Inicio para elegir distintas opciones.
+* Sistema de juego para 1 jugador real de forma local.
+* Controles Jugador 1: Flecha Abajo, Flecha Izquierda, Flecha Derecha, Barra Espaciadora.
+* Lógica de puntuación:
+** Completar una línea horizontal de todas las piezas.
+* Niveles:
+** Sistema de 3 niveles aumentando la dificultad en cada uno de ellos, en velocidad del juego y piezas mostradas.
+
+
+=== *Requerimientos No Funcionales*
+* Sistema Operativo: Debian 13.
+* Paradigma de programación: POO (Orientado a Objetos).
+* Lenguaje: Python 3.
+* Interfaz Gráfica: GUI mediante la librería Pygame.
+* Documentación: Formato Asciidoctor (.adoc).
