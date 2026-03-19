@@ -1,7 +1,8 @@
-= *Proyecto: Ping Pong*
-image::img-banner.jpg[]
+= Proyecto: Tetris Ultimate
 
-== *Autores*
+image::recursos/img-banner.JPEG[width=400]
+
+== Autores
 * Allan González 
 * Andrés Reyes 
 * Fernando Reyes
@@ -13,9 +14,9 @@ El usuario requiere un juego de Tetris interactivo para un jugador real que perm
 == *Requerimientos*
 
 === *Requerimientos Funcionales*
-* Pantalla de Inicio para elegir distintas opciones.
+* Pantalla de Inicio 
 * Sistema de juego para 1 jugador real de forma local.
-* Controles Jugador 1: Flecha Abajo, Flecha Izquierda, Flecha Derecha, Barra Espaciadora.
+* Controles Jugador 1: Flecha arriba (rotación), Flecha Abajo, Flecha Izquierda, Flecha Derecha, Barra Espaciadora.
 * Lógica de puntuación:
 ** Completar una línea horizontal de todas las piezas.
 * Niveles:
@@ -28,3 +29,5 @@ El usuario requiere un juego de Tetris interactivo para un jugador real que perm
 * Lenguaje: Python 3.
 * Interfaz Gráfica: GUI mediante la librería Pygame.
 * Documentación: Formato Asciidoctor (.adoc).
+
+== *Diseño*

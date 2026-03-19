@@ -1,0 +1,17 @@
+{docdate}
+:encoding: utf-8
+:lang: es
+:icons: font
+:toc: right
+:toc-title: Tabla de Contenido
+:sectnums!:
+:doctype: book
+:copyblocks:
+:linkattrs:
+:experimental:
+:plantuml:
+:figure-caption: Figura
+:example-caption: Ejemplo
+:table-caption: Tabla
+:imagesdir: recursos/
+:volver: ../index.html
