@@ -1,0 +1,57 @@
+@startuml
+start
+:Seleccionar tipo de pieza aleatorio (0-6);
+:Asignar forma según tipo;
+:Asignar color según tipo;
+:Posición inicial (x=3, y=0);
+
+while (Juego activo?) is (Sí)
+  if (¿Entrada del usuario?) then (Sí)
+    if (Entrada = FLECHA_IZQUIERDA) then
+      if (validar_movimiento(ox=-1)) then (Válido)
+        :x -= 1;
+      endif
+    elseif (Entrada = FLECHA_DERECHA) then
+      if (validar_movimiento(ox=1)) then (Válido)
+        :x += 1;
+      endif
+    elseif (Entrada = FLECHA_ABAJO) then
+      if (validar_movimiento(oy=1)) then (Válido)
+        :y += 1;
+      endif
+    elseif (Entrada = FLECHA_ARRIBA) then
+      :Guardar forma actual;
+      :rotar();
+      if (validar_movimiento()) then (Inválido)
+        :Restaurar forma anterior;
+      endif
+    elseif (Entrada = ESPACIO) then
+      while (validar_movimiento(oy=1)) is (Válido)
+        :y += 1;
+      endwhile
+      :fijar_pieza();
+    endif
+  endif
+
+  if (¿Tiempo de caída alcanzado?) then (Sí)
+    if (validar_movimiento(oy=1)) then (Válido)
+      :y += 1;
+    else
+      :fijar_pieza();
+    endif
+    :Reiniciar contador de caída;
+  endif
+
+  if (¿Pieza fijada?) then (Sí)
+    :Crear nueva pieza actual;
+    :Asignar siguiente pieza como actual;
+    :Generar nueva siguiente pieza;
+    if (validar_movimiento(pieza_actual)) then (Inválido)
+      :estado = "GAME_OVER";
+      :Reproducir sonido perder;
+      :Detener música;
+    endif
+  endif
+endwhile
+stop
+@enduml

@@ -1,0 +1,60 @@
+@startuml
+start
+:Inicializar Pygame;
+:Crear ventana y recursos;
+:Cargar efectos de sonido;
+
+if (¿Audio cargado correctamente?) then (Sí)
+  :Audio disponible;
+else (No)
+  :Modo sin audio;
+endif
+
+:Mostrar menú principal;
+
+if (¿Desea jugar o salir?) then (Jugar)
+  :Resetear partida;
+  :nivel = 1;
+  :puntuacion = 0;
+  :Cargar música del nivel 1;
+  :estado = "JUGANDO";
+
+  while (Juego activo?) is (Sí)
+    :Procesar eventos del teclado;
+    :Actualizar tiempo acumulado;
+    :Actualizar caída de pieza;
+
+    if (¿Tiempo >= 120 segundos?) then (Sí)
+      if (nivel < 3) then (Sí)
+        :subir_nivel();
+        :Cargar música del nuevo nivel;
+        :Mostrar mensaje "SIGUIENTE NIVEL";
+      else (nivel = 3)
+        :estado = "VICTORIA";
+        :Reproducir sonido de victoria;
+        :Detener música;
+      endif
+    endif
+
+    if (estado = "JUGANDO") then
+      :Dibujar cuadrícula;
+      :Dibujar pieza actual;
+      :Dibujar siguiente pieza;
+      :Mostrar puntuación y nivel;
+      :Mostrar tiempo restante;
+    else
+      :Mostrar pantalla de pausa/game over/victoria;
+    endif
+
+    :Actualizar pantalla;
+    :Controlar FPS (60);
+  endwhile
+
+  stop
+
+else (Salir)
+  :Cerrar pygame;
+  :Salir del sistema;
+  stop
+endif
+@enduml

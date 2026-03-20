@@ -1,0 +1,59 @@
+@startuml
+start
+:puntuacion = 0;
+:nivel = 1;
+:lineas_completadas = 0;
+:tiempo_ms = 0;
+
+while (¿Juego activo?) is (Sí)
+  :Actualizar tiempo_ms += dt;
+
+  if (¿Línea completada?) then (Sí)
+    :Contar líneas eliminadas;
+    
+    if (lineas_eliminadas == 1) then
+      :puntuacion += 100;
+    elseif (lineas_eliminadas == 2) then
+      :puntuacion += 200;
+    elseif (lineas_eliminadas == 3) then
+      :puntuacion += 300;
+    else (4 líneas)
+      :puntuacion += 400;
+    endif
+    
+    :Reproducir sonido punto;
+  endif
+
+  if (tiempo_ms >= 120000) then (Sí)
+    if (nivel == 1) then
+      :nivel = 2;
+      :Velocidad caída = 500ms;
+      :Reiniciar tiempo_ms = 0;
+      :Limpiar cuadrícula;
+      :Reproducir música nivel 2;
+      :Mostrar mensaje nivel;
+    elseif (nivel == 2) then
+      :nivel = 3;
+      :Velocidad caída = 300ms;
+      :Reiniciar tiempo_ms = 0;
+      :Limpiar cuadrícula;
+      :Reproducir música nivel 3;
+      :Mostrar mensaje nivel;
+    else (nivel == 3)
+      :estado = "VICTORIA";
+      detach
+    endif
+  endif
+
+  if (¿Colisión superior?) then (Sí)
+    :estado = "GAME_OVER";
+    break
+  endif
+endwhile (No)
+
+:Mostrar puntuación final;
+:Mostrar nivel alcanzado;
+:Mostrar tiempo sobrevivido;
+
+stop
+@enduml
