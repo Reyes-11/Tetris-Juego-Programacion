@@ -1,3 +1,8 @@
+# Lenguaje de programación Eval-Número 4 
+# Allan González V- 28.660.376
+# Andrés Reyes V- 30.520.333
+# Fernando Reyes V-30.159.566
+# Mitchael Ruíz V- 31.416.127
 
 import pygame
 import random
