@@ -1,6 +1,6 @@
 = Proyecto: Tetris Ultimate
 
-image::recursos/img-banner.JPEG[width=400]
+image::../recursos/img-banner.JPEG[width=400]
 
 == Autores
 * Allan González 
@@ -35,18 +35,18 @@ Los presentes diagramas puml y de Clase del presente código de nuestro juego Te
 
 == *Diseño de Funcionamiento general*
 
-image::recursos/diagrama_general.png[]
+image::../recursos/diagrama_general.png[]
 Descripción: Representa el flujo principal desde la inicialización de Pygame, la gestión del menú y el bucle de juego (game loop). Incluye la lógica de actualización de estados (tiempo, niveles y victoria), el renderizado de la interfaz gráfica y el control de frames por segundo (60 FPS).
 
 == *Diseño de Piezas*
 
-image::recursos/diagrama_piezas.png[]
+image::../recursos/diagrama_piezas.png[]
 Descripción: Detalla la manipulación de piezas, cubriendo la selección aleatoria, el procesamiento de entradas de teclado (movimiento y rotación) y la validación de colisiones. Incluye la lógica de caída automática, el fijado de piezas en la cuadrícula y la detección de la condición de Game Over por bloqueo superior.
 
 == *Diseño de Puntuación*
 
-image::recursos/diagrama_puntuacion.png[]
+image::../recursos/diagrama_puntuacion.png[]
 Descripción: Expone el sistema de métricas del juego. Describe el cálculo de puntos basado en el número de líneas eliminadas simultáneamente, la progresión de dificultad mediante el cambio de niveles cada 120 segundos y las acciones asociadas a cada transición (cambio de velocidad, música y limpieza de pantalla).
 
 == *Diagrama de Clase*
-image::recursos/diagrama-clase.jpeg[]
+image::../recursos/diagrama-clase.jpeg[]

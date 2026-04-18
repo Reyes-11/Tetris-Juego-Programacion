@@ -54,7 +54,7 @@ class JuegoTetris:
         self.pausa_mensaje_nivel = 0
         self.musica_actual = ""
         
-        # Carga de efectos (WAV es lo mejor aquí)
+        # Carga de efectos 
         try:
             self.snd_punto = pygame.mixer.Sound("punto.wav")
             self.snd_perder = pygame.mixer.Sound("perder.wav")
@@ -67,7 +67,6 @@ class JuegoTetris:
     def cargar_musica_nivel(self):
         if not self.audio_ok: return
         
-        # Aunque sean WAV, usamos music.load para que no pesen tanto en RAM
         archivo = f"nivel{self.nivel}.wav"
         
         if self.musica_actual != archivo:
